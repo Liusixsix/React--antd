@@ -4,6 +4,7 @@ import './index.css';
 import Router from './router'
 import Admin from './admin'
 import App from './App'
-ReactDOM.render(<Router />, document.getElementById('root'));
+import List from './pages/ui/list'
+ReactDOM.render(<List />, document.getElementById('root'));
 
 

@@ -27,4 +27,8 @@ export default class Router extends React.Component {
             </HashRouter>
         )
     }
+
+    // componentDidMount(){
+    //     console.log('componentDidMount')
+    // }
 }

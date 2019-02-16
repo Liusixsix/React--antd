@@ -41,7 +41,7 @@ export default class Navleft extends React.Component{
     }
 
     render(){
-        const { getFieldDecorator } = this.props.form;
+        // const { getFieldDecorator } = this.props.form;
         return(
             <div>
          <div className='logo'>

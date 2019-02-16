@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Icon, Input, Button, Checkbox, Card } from 'antd';
-
+import axios from 'axios'
 export default class Buttons extends React.Component {
 
     state = {
@@ -35,5 +35,10 @@ export default class Buttons extends React.Component {
                 </Card>
             </div>
         )
+    }
+    componentDidMount(){
+        // axios.get('/api/item').then(res=>{
+        //     console.log(22)
+        // })
     }
 }

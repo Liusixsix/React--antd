@@ -1,5 +1,6 @@
-import {createStore} from 'redux'
-import reducer from './reducer'
-const store =createStore(reducer);
+import {combineReducers } from 'redux'
+import todos from './reducer'
 
-export default store;
+export default combineReducers({
+    todos
+})

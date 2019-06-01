@@ -1,13 +1,25 @@
-import React,{Component} from 'react'
-// import renderEmpty from 'antd/lib/config-provider/renderEmpty';
-// import {HashRouter,Router,Switch} from 'react-router-dom'
-class App extends Component{
+import React, { Component } from 'react'
+import './App.less'
 
-    render(){
-       return <div>
-            {this.props.children}
-        </div>
+import Headers from './view/headers/headers'
+
+
+class App extends Component {
+    constructor(props) {
+        super()     
     }
+   
+    
+    render() {
+        return (
+            <div>
+                <Headers></Headers>
+            </div>
+        )
+    }
+
+   
+
 }
 
 export default App;

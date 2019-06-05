@@ -17,16 +17,17 @@ class Login extends React.Component {
     render() {
       const { getFieldDecorator } = this.props.form;
       return (
+        <div id='login-wrap'>
         <div id='components-form-demo-normal-login'>
         <Form onSubmit={this.handleSubmit} className="login-form" >
-          <div className='tag'>REACT-ANTD</div>
+          <div className='tag'><h1>后台管理</h1></div>
           <Form.Item >
             {getFieldDecorator('username', {
               rules: [{ required: true, message: '请输入用户名!' }],
             })(
               <Input
                 prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                placeholder="Username"
+                placeholder="请输入用户名"
               />,
             )}
           </Form.Item>
@@ -37,24 +38,32 @@ class Login extends React.Component {
               <Input
                 prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                 type="password"
-                placeholder="Password"
+                placeholder="请输入密码"
               />,
             )}
           </Form.Item>
           <Form.Item>
-            {getFieldDecorator('remember', {
-              valuePropName: 'checked',
-              initialValue: true,
-            })(<Checkbox>Remember me</Checkbox>)}
-            <a className="login-form-forgot" href="">
-               Forgot password
-            </a>
+            
+          {getFieldDecorator('code', {
+              rules: [{ required: true, message: '请输入验证码!' }],
+            })(
+              <Input
+              style={{width:'180px'}}
+                prefix={<Icon type="safety" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                placeholder="请输入验证码"
+              />,
+            )}
+        
+          </Form.Item>
+          <Form.Item>
+            
             <Button type="primary" htmlType="submit" className="login-form-button">
-               Log in
+               登陆
             </Button>
-           Or <a href="">register now!</a>
+      
           </Form.Item>
         </Form>
+        </div>
         </div>
       );
     }

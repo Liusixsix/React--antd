@@ -1,15 +1,20 @@
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon ,Breadcrumb} from 'antd';
 import React, { Component } from 'react'
-import { Route,Link} from 'react-router-dom'
+import { Route,Link,Switch} from 'react-router-dom'
 import Button from '../button/button'
-import Breadcrumbs from '../../common/Breadcrumb/Breadcrumb'
-
+import Toexamine from '../Toexamine/index'
+import Eachar from '../echart/index'
+// import Breadcrumbs from '../../common/Breadcrumb/Breadcrumb'
+import Headers from '../../view/headers/headers'
 import './Layout.less'
 const { Header, Sider, Content, Footer } = Layout;
 const { SubMenu } = Menu;
 const Main = () => {
     return (
-        <Route exact path='/admin/button' component={Button}></Route>
+      <Switch>
+        <Route exact path='/admin/Toexamine' component={Toexamine}></Route>
+        <Route exact path='/admin/Echart' component={Eachar}></Route>
+      </Switch>
     )
 }
 
@@ -29,82 +34,94 @@ class SiderDemo extends React.Component {
     render() {
         return (
             <div id='components-layout-demo-custom-trigger'>
-                <Layout>
-                    <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-                        <div className="logo" ></div>
-                        <Menu
-                            defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['sub1']}
-                            mode="inline"
-                            theme="dark"
-                            inlineCollapsed={this.state.collapsed}
-                        >
-                            <Menu.Item key="/admin">
-                               <Link to='/admin/button'> <Icon type="pie-chart" /><span>按钮</span></Link>
-                            </Menu.Item>
-                            <Menu.Item key="2">
-                                <Icon type="desktop" />
-                                <span>Option 2</span>
-                            </Menu.Item>
-                            <Menu.Item key="3">
-                                <Icon type="inbox" />
-                                <span>Option 3</span>
-                            </Menu.Item>
-                            <SubMenu
-                                key="sub1"
-                                title={
-                                    <span>
-                                        <Icon type="mail" />
-                                        <span>Navigation One</span>
-                                    </span>
-                                }
-                            >
-                                <Menu.Item key="5">Option 5</Menu.Item>
-                                <Menu.Item key="6">Option 6</Menu.Item>
-                                <Menu.Item key="7">Option 7</Menu.Item>
-                                <Menu.Item key="8">Option 8</Menu.Item>
-                            </SubMenu>
-                            <SubMenu
-                                key="sub2"
-                                title={
-                                    <span>
-                                        <Icon type="appstore" />
-                                        <span>Navigation Two</span>
-                                    </span>
-                                }
-                            >
-                                <Menu.Item key="9">Option 9</Menu.Item>
-                                <Menu.Item key="10">Option 10</Menu.Item>
-                                <SubMenu key="sub3" title="Submenu">
-                                    <Menu.Item key="11">Option 11</Menu.Item>
-                                    <Menu.Item key="12">Option 12</Menu.Item>
-                                </SubMenu>
-                            </SubMenu>
-                        </Menu>
-                    </Sider>
-                    <Layout>
-                        <Header style={{ background: '#fff', padding: 0 }}>
-                            <Icon
-                                className="trigger"
-                                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                                onClick={this.toggle}
-                            />
-                        </Header>
-                        <Breadcrumbs className='bre'/>
-                        <Content
-                            style={{
-                                margin: '24px 16px',
-                                padding: 24,
-                                background: '#fff',
-                                minHeight: 280,
-                            }}
-                        >
+                 <Layout>
+            <Headers></Headers>
+    <Content >   
+      <Layout >
+        <Sider width={200} style={{ background: '#fff' }} trigger={null} collapsible collapsed={this.state.collapsed}>
+        <Header style={{  padding: 0 }}>
+            <Icon
+              className="trigger"
+              style={{color:'#fff'}}
+              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+              onClick={this.toggle}
+            />
+          </Header>
+          <Menu
+            mode="inline"
+            theme="dark"
+            className='menu'
+            defaultSelectedKeys={['1']}
+            defaultOpenKeys={['sub1']}
+            style={{  }}
+          >
+            <SubMenu
+              key="Toexamine"
+              title={
+                <span>
+                  <Icon type="user" />
 
-                            <Main />
-                        </Content>
-                        {/* <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer> */}
-                    </Layout>
-                </Layout>
+                  <span>案件管理</span>
+                </span>
+              }
+            >
+              <Menu.Item key="3">
+              <Link to='/admin/Toexamine'>审核管辖权</Link>
+              </Menu.Item>
+              <Menu.Item key="4">
+              <Link to='/admin/Echart'>审核管辖权</Link>
+              </Menu.Item>
+              <Menu.Item key="5">Alex</Menu.Item>
+            </SubMenu>
+            <SubMenu
+              key="sub1"
+              title={
+                <span>
+                  <Icon type="user" />
+                  <span>立案管理</span>
+                </span>
+              }
+            >
+              <Menu.Item key="3">Tom</Menu.Item>
+              <Menu.Item key="4">Bill</Menu.Item>
+              <Menu.Item key="5">Alex</Menu.Item>
+            </SubMenu>
+            <SubMenu
+              key="sub3"
+              title={
+                <span>
+                  <Icon type="user" />
+                  <span>立案管理</span>
+                </span>
+              }
+            >
+              <Menu.Item key="3">Tom</Menu.Item>
+              <Menu.Item key="4">Bill</Menu.Item>
+              <Menu.Item key="5">Alex</Menu.Item>
+            </SubMenu>
+            <SubMenu
+              key="sub4"
+              title={
+                <span>
+                  <Icon type="user" />
+                  <span>立案管理</span>
+                </span>
+              }
+            >
+              <Menu.Item key="3">Tom</Menu.Item>
+              <Menu.Item key="4">Bill</Menu.Item>
+              <Menu.Item key="5">Alex</Menu.Item>
+            </SubMenu>
+          </Menu>
+        </Sider>
+        
+        <Content style={{  minHeight: 280, background: '#F0F2F5'}}>
+           <Main></Main>      
+        </Content>
+      </Layout>
+    </Content>
+  
+  </Layout>
             </div>
         );
     }

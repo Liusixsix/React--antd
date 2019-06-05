@@ -1,0 +1,29 @@
+.echart-wrap{
+    height: calc(100% - 64px);
+    padding: '34px 37px'
+   
+}
+.col{
+   
+    display: flex;
+    align-items: center;
+    img{
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 25px;
+        padding: 8px 0;
+        box-sizing: border-box;
+        // border: 1px solid red;
+       h3{
+            color:rgba(130,130,130,1);
+            font-size: 14px;
+       }
+    }
+}

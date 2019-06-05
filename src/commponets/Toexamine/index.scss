@@ -1,0 +1,26 @@
+.content-wrap{
+    min-height: calc(100% - 64px);
+    // overflow: auto;
+    // height: 100% - 64;
+}
+
+.ant-advanced-search-form {
+    // padding: 24px;
+    // background: #fbfbfb;
+    // border: 1px solid #d9d9d9;
+    border-radius: 6px;
+  }
+  
+  .ant-advanced-search-form .ant-form-item {
+    display: flex;
+  }
+  
+  .ant-advanced-search-form .ant-form-item-control-wrapper {
+    flex: 1;
+  }
+  .bnt-wrap{
+    .ant-btn-primary{
+        background:rgba(1,148,54,1);
+      }
+  }
+  

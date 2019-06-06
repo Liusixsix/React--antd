@@ -155,7 +155,6 @@ const columns = [
     },
 ];
 
-
 const btnArr = [
     { value: '全部' },
     { value: '申请' },
@@ -186,20 +185,21 @@ export default class Examine extends Component {
         return (
             <div style={{ height: '99%' }}>
                 <Breadcrumb title1={'审核管理'} title2={'审核管辖权'}></Breadcrumb>
-                <div className='content-wrap' style={{ padding: '24px 24px' }}>
-                    <div style={{ background: '#fff', height: '100%', padding: '24px 24px', boxSizing: 'border-box' }}>
+                <div className='content-wrap' style={{ }}>
+
+                    {/* <div style={{ background: '#fff', height: '100%', padding: '24px 24px', boxSizing: 'border-box' }}> */}
                 
                     <Children handleSearch={this.handleSearch}></Children>
                     <Buttons btnArr={btnArr} bntClick={this.bntClick} btnindex={this.state.btnindex}></Buttons>
                     <Table dataSource={dataSource} bordered columns={columns} />
-                    </div>
+                    {/* </div> */}
                 </div>
             </div>
         )
     }
 
     // 点击按钮切换
-    bntClick(index) {     
+    bntClick(index) {            
         this.setState({
             btnindex: index
         })

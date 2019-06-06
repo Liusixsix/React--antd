@@ -13,7 +13,8 @@ const Routers = () => {
                 {/* 后台模板 */}
                 <Route  path='/admin' component={Admin} ></Route>
                 {/* 练习 */}
-                <Route  path='/index' component={App} />                            
+                <Route  path='/index' component={App} />     
+                                       
             </Switch>
         </Router>
     )

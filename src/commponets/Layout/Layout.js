@@ -4,7 +4,8 @@ import { Route,Link,Switch} from 'react-router-dom'
 import Button from '../button/button'
 import Toexamine from '../Toexamine/index'
 import Eachar from '../echart/index'
-// import Breadcrumbs from '../../common/Breadcrumb/Breadcrumb'
+import Filing from '../Filing/index'
+import Gropu from '../Groupcourt/index'
 import Headers from '../../view/headers/headers'
 import './Layout.less'
 const { Header, Sider, Content, Footer } = Layout;
@@ -14,6 +15,8 @@ const Main = () => {
       <Switch>
         <Route exact path='/admin/Toexamine' component={Toexamine}></Route>
         <Route exact path='/admin/Echart' component={Eachar}></Route>
+        <Route exact path='/admin/Filing' component={Filing}></Route>
+        <Route exact path='/admin/Gropu' component={Gropu}></Route>
       </Switch>
     )
 }
@@ -60,7 +63,6 @@ class SiderDemo extends React.Component {
               title={
                 <span>
                   <Icon type="user" />
-
                   <span>案件管理</span>
                 </span>
               }
@@ -71,7 +73,9 @@ class SiderDemo extends React.Component {
               <Menu.Item key="4">
               <Link to='/admin/Echart'>审核管辖权</Link>
               </Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
+              <Menu.Item key="5">
+              <Link to='/admin/Filing'>立案送达</Link>
+              </Menu.Item>
             </SubMenu>
             <SubMenu
               key="sub1"
@@ -87,17 +91,23 @@ class SiderDemo extends React.Component {
               <Menu.Item key="5">Alex</Menu.Item>
             </SubMenu>
             <SubMenu
-              key="sub3"
+              key="Gropu"
               title={
                 <span>
                   <Icon type="user" />
-                  <span>立案管理</span>
+                  <span>组庭管理</span>
                 </span>
               }
             >
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
+              <Menu.Item key="/admin/Gropu">
+                <Link to='/admin/Gropu' >案件组庭</Link>
+              </Menu.Item>
+              <Menu.Item key="4">
+                <Link to=''>组庭开庭送达</Link>
+              </Menu.Item>
+              <Menu.Item key="5">
+               <Link to=''>开庭笔录</Link>
+              </Menu.Item>
             </SubMenu>
             <SubMenu
               key="sub4"
@@ -115,7 +125,7 @@ class SiderDemo extends React.Component {
           </Menu>
         </Sider>
         
-        <Content style={{  minHeight: 280, background: '#F0F2F5'}}>
+        <Content style={{ }}>
            <Main></Main>      
         </Content>
       </Layout>

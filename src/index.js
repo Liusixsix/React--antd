@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import Routers from './router'
-// import Addtodo from './commponets/AddTodo'
-
-
-
-
+import './assets/iconfont/iconfont.css'
+import './assets/css/reset.css'
+import AppRouter from './AppRouter'
 ReactDOM.render(<Routers/>, document.getElementById('root'));
 
 

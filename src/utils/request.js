@@ -6,16 +6,17 @@ const service = axios.create({
     // 开发环境
     baseURL: process.env.NODE_ENV === 'development' ? 'http://192.168.0.61:8082' : 'http://69.171.69.13:3001', // api的base_url
     timeout: 20000, // request timeout
-    transformRequest:[
-        function(data,headers){
-          headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    transformRequest: [
+        function (data, headers) {
+            headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
         }
-      ]
+    ]
 })
 
 // request interceptor
 service.interceptors.request.use(config => {
-    config.data = config.data ? config.data : {}
+    config.data = config.data ? config.data : {};
+    // config.withCredentials = true
     return config
 }, error => {
     Promise.reject(error)

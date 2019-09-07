@@ -2,13 +2,22 @@
 import React from 'react'
 import './Layout.less'
 import { Layout, Menu, Icon } from 'antd';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Tags from './commponent/tags'
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 
 
 class admin extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+   
+  }
+
   render() {
     return (
       <Layout>
@@ -20,59 +29,51 @@ class admin extends React.Component {
             style={{ borderTop: ' 0.5px solid #fff' }}
             collapsedWidth="0">
             <Menu
-              mode="inline"
-              theme="dark"
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
-              style={{ height: '100%', borderRight: 0 }}
+              selectedKeys={[this.props.location.pathname]}
+              mode="inline"
+              theme="dark"
             >
               <SubMenu
                 key="sub1"
                 title={
                   <span>
-                    <Icon type="user" />
-                    文章
-              </span>
+                    <Icon type="mail" />
+                    <span> 门店</span>
+                  </span>
                 }
               >
-                <Menu.Item key="1"><Link to='/admin/Article'>发布</Link></Menu.Item>
-                <Menu.Item key="2"><Link to='/admin/TodoList'>文章管理</Link></Menu.Item>
-
+                <Menu.Item key="/admin/Purchase">
+                  <Link to='/admin/Purchase'>进货明细</Link>
+                </Menu.Item>
+                <Menu.Item key="6">销售明细</Menu.Item>
+                <Menu.Item key="7">库存明细</Menu.Item>
+                <Menu.Item key="8">进销存明细</Menu.Item>
               </SubMenu>
               <SubMenu
                 key="sub2"
                 title={
                   <span>
-                    <Icon type="laptop" />
-                    图片
-              </span>
+                    <Icon type="appstore" />
+                    <span>线上</span>
+                  </span>
                 }
               >
-                <Menu.Item key="5">图片发布</Menu.Item>
-                <Menu.Item key="6">图片管理</Menu.Item>
+                <Menu.Item key="9">进货明细</Menu.Item>
+                <Menu.Item key="10">销售明细</Menu.Item>
 
               </SubMenu>
-              <SubMenu
-                key="sub3"
-                title={
-                  <span>
-                    <Icon type="notification" />
-                    视频
-              </span>
-                }
-              >
-                <Menu.Item key="9">视频发布</Menu.Item>
-                <Menu.Item key="10">视频管理</Menu.Item>
-              </SubMenu>
+              <Menu.Item key="11"> <Icon type="mail" />用户管理</Menu.Item>
             </Menu>
           </Sider>
-          <Layout style={{ padding: '15px 15px 15px' }}>
+          <Layout style={{ padding: '0px 15px 0px', }}>
+            <Tags></Tags>
             <Content
               style={{
-                // background: '#fff',
-                // padding: 24,
                 margin: 0,
-                minHeight: 280,
+                marginTop:13,
+                padding: '0px',
               }}
             >
               {this.props.children}

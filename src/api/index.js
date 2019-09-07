@@ -1,5 +1,5 @@
 import request from '../utils/request'
-import qs from 'qs'
+// import qs from 'qs'
 
 export const login = (params) => {
     return request({

@@ -1,0 +1,58 @@
+.top{
+    background: #fff;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 8px;
+    // padding-bottom: 0;
+}
+.ant-advanced-search-form {
+    padding: 24px;
+    background: #fbfbfb;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+  }
+  
+  .ant-advanced-search-form .ant-form-item {
+    display: flex;
+  }
+  
+  .ant-advanced-search-form .ant-form-item-control-wrapper {
+    flex: 1;
+  }
+  .Drag{
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    // background: pink;
+    width: 100%;
+    z-index: 9;
+    cursor: ns-resize;
+}
+.eokPlO {
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+     margin: 0 auto;
+    width: 80px;
+    height: 8px;
+    transform: translateX(-50%);
+    background: rgb(255, 255, 255);
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.03);
+  }
+
+  .dn{
+    display: none;
+  }
+  .from{
+    overflow: auto;
+  }
+
+  .table{
+    background: #fff;
+  }

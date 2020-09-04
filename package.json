@@ -36,7 +36,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "typescript": "^3.6.2"
   },
   "homepage": "."
